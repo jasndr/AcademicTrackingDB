@@ -17,6 +17,7 @@ namespace AcademicWeb
 
         String currEmpl = "fangr";
         int academicTypeVal = 1;
+        int startSemesterId = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,137 +47,154 @@ namespace AcademicWeb
         }
 
         //What happens when a value is selected in Biostats Dropdown list
-        protected void biostatList_SelectedIndexChanged(Object sender, EventArgs e)
+        protected void biostatList2_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            String selectedValue = biostatList.SelectedItem.Value;
 
-            switch (selectedValue)
+            if (!Page.IsPostBack)
             {
-                case "fangr":
-                    currEmpl = "fangr";
-                    Rui.Checked = true;
-                    break;
-                case "hjahn":
-                    currEmpl = "hjahn";
-                    Jun.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "jamesdav":
-                    currEmpl = "jamesdav";
-                    Jim.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "jjchen":
-                    currEmpl = "jjchen";
-                    John.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "jllr":
-                    currEmpl = "jllr";
-                    Jewels.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "kgandhi":
-                    currEmpl = "kgandhi";
-                    Krupa.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "lime":
-                    currEmpl = "lime";
-                    Eunjung.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "rdcastro":
-                    currEmpl = "rdcastro";
-                    Rosa.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "vedbar":
-                    currEmpl = "vedbar";
-                    Ved.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "yrui":
-                    currEmpl = "yrui";
-                    Yang.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "pwnhwang":
-                    currEmpl = "pwnhwang";
-                    Phoebe.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "jdelosr":
-                    currEmpl = "jdelosr";
-                    Jason.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "cksiri":
-                    currEmpl = "cksiri";
-                    Chathura.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "soyung":
-                    currEmpl = "soyung";
-                    Soyung.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                case "dengy":
-                    currEmpl = "dengy";
-                    Youping.Checked = true;
-                    Rui.Checked = false;
-                    break;
-                default:
-                    currEmpl = "Rui";
-                    break;                 
+            }
+            else
+            {
+                String selectedValue = biostatList2.Value;
+
+                switch (selectedValue)
+                {
+                    case "fangr":
+                        currEmpl = "fangr";
+                        break;
+                    case "hjahn":
+                        currEmpl = "hjahn";
+                        break;
+                    case "jamesdav":
+                        currEmpl = "jamesdav";
+                        break;
+                    case "jjchen":
+                        currEmpl = "jjchen";
+                        break;
+                    case "jllr":
+                        currEmpl = "jllr";
+                        break;
+                    case "kgandhi":
+                        currEmpl = "kgandhi";
+                        break;
+                    case "lime":
+                        currEmpl = "lime";
+                        break;
+                    case "rdcastro":
+                        currEmpl = "rdcastro";
+                        break;
+                    case "vedbar":
+                        currEmpl = "vedbar";
+                        break;
+                    case "yrui":
+                        currEmpl = "yrui";
+                        break;
+                    case "pwnhwang":
+                        currEmpl = "pwnhwang";
+                        break;
+                    case "jdelosr":
+                        currEmpl = "jdelosr";
+                        break;
+                    case "cksiri":
+                        currEmpl = "cksiri";
+                        break;
+                    case "soyung":
+                        currEmpl = "soyung";
+                        break;
+                    case "dengy":
+                        currEmpl = "dengy";
+                        break;
+                    default:
+                        currEmpl = "Rui";
+                        break;
+                }
+
+                            
             }
         }
 
-        protected void academicTypeList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedValue = Int32.Parse(academicTypeList.SelectedValue);
+     
 
+        protected void academicTypeList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (!Page.IsPostBack)
+            {
+            }
+            else
+            {
+
+
+                int selectedValue = Int32.Parse(academicTypeList2.Value);
+      
+
+                switch (selectedValue)
+                {
+                    case 1:
+                        academicTypeVal = 1;
+                        break;
+                    case 2:
+                        academicTypeVal = 2;
+                        break;
+                    case 3:
+                        academicTypeVal = 3;
+                        break;
+                    case 4:
+                        academicTypeVal = 4;
+                        break;
+                    case 5:
+                        academicTypeVal = 5;
+                        break;
+                    case 6:
+                        academicTypeVal = 6;
+                        break;
+                    case 7:
+                        academicTypeVal = 7;
+                        break;
+                    case 8:
+                        academicTypeVal = 8;
+                        break;
+                    case 9:
+                        academicTypeVal = 9;
+                        break;
+                    case 10:
+                        academicTypeVal = 10;
+                        break;
+                    case 11:
+                        academicTypeVal = 11;
+                        break;
+                    default:
+                        academicTypeVal = 0;
+                        break;
+                }
+
+            
+            }
+
+        }
+
+
+        protected void teaching_ss_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedValue = Int32.Parse(teaching_ss.Value);
             switch (selectedValue)
             {
                 case 1:
-                    academicTypeVal = 1;
+                    startSemesterId = 1;
                     break;
                 case 2:
-                    academicTypeVal = 2;
+                    startSemesterId = 2;
                     break;
                 case 3:
-                    academicTypeVal = 3;
-                    break;
-                case 4:
-                    academicTypeVal = 4;
-                    break;
-                case 5:
-                    academicTypeVal = 5;
-                    break;
-                case 6:
-                    academicTypeVal = 6;
-                    break;
-                case 7:
-                    academicTypeVal = 7;
-                    break;
-                case 8:
-                    academicTypeVal = 8;
-                    break;
-                case 9:
-                    academicTypeVal = 9;
-                    break;
-                case 10:
-                    academicTypeVal = 10;
-                    break;
-                case 11:
-                    academicTypeVal = 11;
+                    startSemesterId = 3;
                     break;
                 default:
-                    academicTypeVal = 1;
+                    startSemesterId = 1;
                     break;
-            }
 
+            }
         }
+
 
         //What happens if the "submit" button is clicked
         protected void Submit_Click(object sender, EventArgs e)
@@ -229,177 +247,185 @@ namespace AcademicWeb
 
             System.Text.StringBuilder staff = new System.Text.StringBuilder();
             //if staff is clicked, and there is nothing initated, create string then append
-            if (Rui.Checked)
+
+            if (!(Rui.Checked|Jun.Checked|Jim.Checked|John.Checked|Jewels.Checked|Krupa.Checked|Eunjung.Checked|Eunjung.Checked|Rosa.Checked
+                | Ved.Checked | Yang.Checked | Phoebe.Checked | Jason.Checked | Chathura.Checked | Soyung.Checked | Youping.Checked))
             {
-                if (staff.Length == 0)
+                staff.Append("(@Jason)");
+            } else
+            {
+                if (Rui.Checked)
                 {
-                    staff.Append("(@Rui");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Rui");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Rui");
+                    }
+
                 }
-                else
+                if (Jun.Checked)
                 {
-                    staff.Append(" | @Rui");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Jun");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Jun");
+                    }
+                }
+                if (Jim.Checked)
+                {
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Jim");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Jim");
+                    }
+                }
+                if (John.Checked)
+                {
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@John");
+                    }
+                    else
+                    {
+                        staff.Append(" | @John");
+                    }
+                }
+                if (Jewels.Checked)
+                {
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Jewels");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Jewels");
+                    }
                 }
 
-            }
-            if (Jun.Checked)
-            {
-                if (staff.Length == 0)
+                if (Krupa.Checked)
                 {
-                    staff.Append("(@Jun");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Krupa");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Krupa");
+                    }
                 }
-                else
+                if (Eunjung.Checked)
                 {
-                    staff.Append(" | @Jun");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Eunjung");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Eunjung");
+                    }
                 }
-            }
-            if (Jim.Checked)
-            {
-                if (staff.Length == 0)
+                if (Rosa.Checked)
                 {
-                    staff.Append("(@Jim");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Rosa");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Rosa");
+                    }
                 }
-                else
+                if (Ved.Checked)
                 {
-                    staff.Append(" | @Jim");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Ved");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Ved");
+                    }
                 }
-            }
-            if (John.Checked)
-            {
-                if (staff.Length == 0)
+                if (Yang.Checked)
                 {
-                    staff.Append("(@John");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Yang");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Yang");
+                    }
                 }
-                else
+                if (Phoebe.Checked)
                 {
-                    staff.Append(" | @John");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Phoebe");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Phoebe");
+                    }
                 }
-            }
-            if (Jewels.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Jewels");
-                }
-                else
-                {
-                    staff.Append(" | @Jewels");
-                }
-            }
 
-            if (Krupa.Checked)
-            {
-                if (staff.Length == 0)
+                if (Jason.Checked)
                 {
-                    staff.Append("(@Krupa");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Jason");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Jason");
+                    }
                 }
-                else
-                {
-                    staff.Append(" | @Krupa");
-                }
-            }
-            if (Eunjung.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Eunjung");
-                }
-                else
-                {
-                    staff.Append(" | @Eunjung");
-                }
-            }
-            if (Rosa.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Rosa");
-                }
-                else
-                {
-                    staff.Append(" | @Rosa");
-                }
-            }
-            if (Ved.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Ved");
-                }
-                else
-                {
-                    staff.Append(" | @Ved");
-                }
-            }
-            if (Yang.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Yang");
-                }
-                else
-                {
-                    staff.Append(" | @Yang");
-                }
-            }
-            if (Phoebe.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Phoebe");
-                }
-                else
-                {
-                    staff.Append(" | @Phoebe");
-                }
-            }
 
-            if (Jason.Checked)
-            {
-                if (staff.Length == 0)
+                if (Chathura.Checked)
                 {
-                    staff.Append("(@Jason");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Chathura");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Chathura");
+                    }
                 }
-                else
+                if (Soyung.Checked)
                 {
-                    staff.Append(" | @Jason");
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Soyung");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Soyung");
+                    }
                 }
-            }
+                if (Youping.Checked)
+                {
+                    if (staff.Length == 0)
+                    {
+                        staff.Append("(@Youping");
+                    }
+                    else
+                    {
+                        staff.Append(" | @Youping");
+                    }
+                }
 
-            if (Chathura.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Chathura");
-                }
-                else
-                {
-                    staff.Append(" | @Chathura");
-                }
+                staff.Append(")");
             }
-            if (Soyung.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Soyung");
-                }
-                else
-                {
-                    staff.Append(" | @Soyung");
-                }
-            }
-            if (Youping.Checked)
-            {
-                if (staff.Length == 0)
-                {
-                    staff.Append("(@Youping");
-                }
-                else
-                {
-                    staff.Append(" | @Youping");
-                }
-            }
-
-            staff.Append(")");
 
             return staff.ToString();
 

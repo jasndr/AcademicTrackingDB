@@ -4,13 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Academic Tracking</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./Scripts/jquery.datetimepicker.css" />
   <script src="./Scripts/jquery.js"></script>
   <script src="./Scripts/build/jquery.datetimepicker.full.min.js"></script>
+  <script src="./Scripts/Javascript.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,8 +23,9 @@
         <!--[Begin Row BiostatList-AcademicType]-->
         <div class="container row">
          <!--===================[BQHS Employee Dropdown]========================================-->
-        <div class="container col-sm-6">
+        <%--<div class="container col-sm-6">
             <label for="biostatList">BQHS Employee:</label>
+
             <asp:DropDownList ID="biostatList" runat="server" AutoPostBack="false" CssClass="form-control" style="width:200px" OnSelectedIndexChanged="biostatList_SelectedIndexChanged">
                 <asp:ListItem Value="fangr" Text="Rui Fang" />
                 <asp:ListItem Value="hjahn" Text="Hyeong Jun Ahn" />
@@ -41,10 +43,31 @@
                 <asp:ListItem Value="soyung" Text="So Yung Choi" />
                 <asp:ListItem Value="dengy" Text="Youping Deng" />
             </asp:DropDownList>
+        </div>--%>
+
+        <div class="container col-sm-6 dropdown">
+            <label>BQHS Employee <em>(you)</em>:</label>
+            <select id="biostatList2" name="biostatList2" class="form-control" style="width: 200px" runat="server">
+                <option value="fangr">Rui Fang</option>
+                <option value="hjahn">Hyeong Jun Ahn</option>
+                <option value="jamesdav">James Davis</option>
+                <option value="jjchen">John Chen</option>
+                <option value="jllr">Jewels Robinson</option>
+                <option value="kgandhi">Krupa Gandhi</option>
+                <option value="lime">Eunjung Lim</option>
+                <option value="rdcastro">Rosa Castro</option>
+                <option value="vedbar">Vedbar Khadka</option>
+                <option value="yrui">Yang Rui</option>
+                <option value="pwnhwang">Phoebe Hwang</option>
+                <option value="jdelosr">Jason Delos Reyes</option>
+                <option value="cksiri">Chathura Siriwardhana</option>
+                <option value="soyung">So Yung Choi</option>
+                <option value="dengy">Youping Deng</option>
+            </select>
         </div>
 
          <!--===============[Academic Type Dropdown]============================================-->
-        <div class="container col-sm-6">
+        <%--<div class="container col-sm-6">
             <label for="academicTypeList">Academic Type:</label>
             <asp:DropDownList ID="academicTypeList" runat="server" AutoPostBack="false" CssClass="form-control" style="width:280px" OnSelectedIndexChanged="academicTypeList_SelectedIndexChanged">
                 <asp:ListItem Value="1" Text="Seminar/Workshop/Lecture/Training" />
@@ -59,103 +82,125 @@
                 <asp:ListItem Value="10" Text="Data Safety Monitoring Committee" />
                 <asp:ListItem Value="11" Text="Other" />
             </asp:DropDownList>
+        </div>--%>
+
+        <div class="container col-sm-6 dropdown">
+            <label>Academic Type:</label>
+            <select id="academicTypeList2" name="academicTypeList2" class="form-control" style="width: 280px" runat="server">
+                <option value="1">Seminar/Workshop/Lecture/Training</option>
+                <option value="2">Teaching</option>
+                <option value="3">Disseration/Thesis Committee</option>
+                <option value="4">Panel/Committee</option>
+                <option value="5">Journal Review</option>
+                <option value="6">Grant Review</option>
+                <option value="7">Honor/Award</option>
+                <option value="8">Professional Training</option>
+                <option value="9">Mentoring K awards and other grants</option>
+                <option value="10">Data Safety Monitoring Committee</option>
+                <option value="11">Other</option>
+            </select>
         </div>
         
         </div> <!-- (End Row BiostatList-AcademicType) -->
+
+        <br />
+
         
+            
+
         <br />
         
         <!--=======================================================[BQHS Employee Checkboxes]=======================================================================-->
-        <label for="biostats">BQHS Employee:</label>
+        <label for="biostats">BQHS Employee <em>(including yourself)</em>:</label>
         <div id="biostats" class="container">
             <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Rui" runat="server" Text="Rui Fang" Checked="true" />
+                <asp:CheckBox ID="Rui" runat="server" Text="Rui Fang" Checked="true" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Jun" runat="server" Text="Hyeong Jun Ahn" />
+                <asp:CheckBox ID="Jun" runat="server" Text="Hyeong Jun Ahn" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Jim" runat="server" Text="James Davis" />
+                <asp:CheckBox ID="Jim" runat="server" Text="James Davis" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="John" runat="server" Text="John Chen" />
+                <asp:CheckBox ID="John" runat="server" Text="John Chen" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
         
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Jewels" runat="server" Text="Jewels Robinson" />
+                <asp:CheckBox ID="Jewels" runat="server" Text="Jewels Robinson" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
        
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Krupa" runat="server" Text="Krupa Gandhi" />
+                <asp:CheckBox ID="Krupa" runat="server" Text="Krupa Gandhi" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Eunjung" runat="server" Text="Eunjung Lim" />
+                <asp:CheckBox ID="Eunjung" runat="server" Text="Eunjung Lim" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Rosa" runat="server" Text="Rosa Castro" />
+                <asp:CheckBox ID="Rosa" runat="server" Text="Rosa Castro" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Ved" runat="server" Text="Vedbar Khadka" />
+                <asp:CheckBox ID="Ved" runat="server" Text="Vedbar Khadka" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Yang" runat="server" Text="Yang Rui" />
+                <asp:CheckBox ID="Yang" runat="server" Text="Yang Rui" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Phoebe" runat="server" Text="Phoebe Hwang" />
+                <asp:CheckBox ID="Phoebe" runat="server" Text="Phoebe Hwang" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Jason" runat="server" Text="Jason Delos Reyes"/>
+                <asp:CheckBox ID="Jason" runat="server" Text="Jason Delos Reyes" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Chathura" runat="server" Text="Chathura Siriwardhana" />
+                <asp:CheckBox ID="Chathura" runat="server" Text="Chathura Siriwardhana" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Soyung" runat="server" Text="So Yung Choi" />
+                <asp:CheckBox ID="Soyung" runat="server" Text="So Yung Choi" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
         <div class="container col-xs-3">
             <div class="checkbox">
-                <asp:CheckBox ID="Youping" runat="server" Text="Youping Deng" />
+                <asp:CheckBox ID="Youping" runat="server" Text="Youping Deng" CssClass="empChk" ClientIdMode="Static" />
             </div>
         </div>
 
@@ -168,7 +213,7 @@
 
         
         <!-- ................................................Begin Seminar Training..............................................................-->
-        <div class="container" id="seminarMod">
+        <div class="container mainForm" id="seminarMod" runat="server">
     
         <h3>Seminar/Workshop/Lecture/Training Given</h3>
 
@@ -282,26 +327,38 @@
                 ForeColor="Red">
            </asp:RequiredFieldValidator>
         </div>
-      
 
     </div><!-- End Seminar Training Module -->
 
+
+
+
+
     <!-- .................................................Start Teaching................................................................................. -->
-    <div class="container" id="teachingMod">
+    <div class="container mainForm" id="teachingMod" runat="server">
 
         <h3>Teaching Courses</h3>
 
         <!--=======================================================[Semester (Dropdown)]=======================================================================-->
         <div class="row">
-        <div class="form-group col-sm-6">
+        <div class="form-group col-sm-6 dropdown">
             <label for="teaching_ss">Semester:</label>
-            <asp:TextBox ID="teaching_ss" runat="server" CssClass="form-control"></asp:TextBox>
+            <select id="teaching_ss" name="teaching_ss" class="form-control" runat="server">
+                <option value="1">Fall</option>
+                <option value="2">Spring</option>
+                <option value="3">Summer</option>
+            </select>
+            <%--<asp:TextBox ID="teaching_ss" runat="server" CssClass="form-control"></asp:TextBox>--%>
             <%--<asp:RequiredFieldValidator ID="rftSS" runat="server"
                 ControlToValidate="startingSem"
                 ErrorMessage="The 'semester' field is required.  Please enter N/A if not applicable/available."
                 ForeColor="Red">
            </asp:RequiredFieldValidator>--%>
         </div>
+
+            
+
+
         <!--=======================================================[Year (Enter Integer)]=======================================================================-->
         <div class="form-group col-sm-6">
             <label for="teaching_y">Year:</label>
@@ -309,12 +366,17 @@
             <asp:RegularExpressionValidator ID="retY" runat="server"
                 ControlToValidate="teaching_y"
                 ValidationExpression="\d+"
-                MinimumValue="1900"
-                MaxiumValue="2100"
                 Display="Static"
                 EnableClientScript="true"
-                ErrorMessage="Please enter a year value from 1900 to 2100 only."
+                ErrorMessage="Please enter a valid integer only."
                 ForeColor="DarkOrange"></asp:RegularExpressionValidator>
+            <br />
+            <asp:RangeValidator ID="rvtY" runat="server"
+                ControlToValidate="teaching_y"
+                MinimumValue="1900"
+                MaximumValue="2100"
+                ErrorMessage="Please enter a year value from 1900 to 2100 only."
+                ForeColor="DarkOrange"></asp:RangeValidator>
             <%--<asp:RequiredFieldValidator ID="rftY" runat="server"
                 ControlToValidate="teaching_y"
                 ErrorMessage="The 'Year' field is required.  Please enter 1900 if not applicable/available."
@@ -391,8 +453,51 @@
 
 
     </div><!-- End Teaching Module -->
-        <!-- Hello!s -->
+      
+    <!-- ................................................Begin Dissertation/Thesis..............................................................-->
+        <div class="container mainForm" id="dissertationMod" runat="server">
+            <h3>Dissertation/Thesis</h3>
+        </div><!--End Disseration Module -->
 
+    <!-- ................................................Begin Panel/Committee..............................................................-->
+        <div class="container mainForm" id="panelMod" runat="server">
+            <h3>Panel/Committee</h3>
+        </div><!--End Panel Module -->
+
+    <!-- ................................................Begin Journal Review..............................................................-->
+        <div class="container mainForm" id="journalMod" runat="server">
+            <h3>Journal Review</h3>
+        </div><!--End Journal Module -->
+
+    <!-- ................................................Begin Grant Review..............................................................-->
+        <div class="container mainForm" id="grantMod" runat="server">
+            <h3>Grant Review</h3>
+        </div><!--End Grant Module -->
+
+    <!-- ................................................Begin Honor/Award..............................................................-->
+        <div class="container mainForm" id="honorMod" runat="server">
+            <h3>Honor/Award</h3>
+        </div><!--End Honor Module -->
+
+    <!-- ................................................Begin Professional Training..............................................................-->
+        <div class="container mainForm" id="professionalMod" runat="server">
+            <h3>Professional Training</h3>
+        </div><!--End Professional Module -->
+
+    <!-- ................................................Begin Mentoring K awards and other grants..............................................................-->
+        <div class="container mainForm" id="mentorMod" runat="server">
+            <h3>Mentoring K awards and other grants</h3>
+        </div><!--End Mentor Module -->
+
+    <!-- ................................................Begin Data Safety Monitorning Committee..............................................................-->
+        <div class="container mainForm" id="dataMod" runat="server">
+            <h3>Data Safety Monitorning Committee</h3>
+        </div><!--End Data Module -->
+
+    <!-- ................................................Begin Other..............................................................-->
+        <div class="container mainForm" id="otherMod" runat="server">
+            <h3>Other</h3>
+        </div><!--End Other Module -->
                
 
 

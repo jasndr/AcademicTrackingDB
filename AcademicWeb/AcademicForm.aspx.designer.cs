@@ -22,22 +22,22 @@ namespace AcademicWeb {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// biostatList control.
+        /// biostatList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList biostatList;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect biostatList2;
         
         /// <summary>
-        /// academicTypeList control.
+        /// academicTypeList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList academicTypeList;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect academicTypeList2;
         
         /// <summary>
         /// Rui control.
@@ -175,6 +175,15 @@ namespace AcademicWeb {
         protected global::System.Web.UI.WebControls.CheckBox Youping;
         
         /// <summary>
+        /// seminarMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl seminarMod;
+        
+        /// <summary>
         /// org control.
         /// </summary>
         /// <remarks>
@@ -301,13 +310,22 @@ namespace AcademicWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfComment;
         
         /// <summary>
+        /// teachingMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teachingMod;
+        
+        /// <summary>
         /// teaching_ss control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox teaching_ss;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect teaching_ss;
         
         /// <summary>
         /// teaching_y control.
@@ -326,6 +344,15 @@ namespace AcademicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator retY;
+        
+        /// <summary>
+        /// rvtY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvtY;
         
         /// <summary>
         /// teaching_Ct control.
@@ -398,6 +425,87 @@ namespace AcademicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rftComment;
+        
+        /// <summary>
+        /// dissertationMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dissertationMod;
+        
+        /// <summary>
+        /// panelMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelMod;
+        
+        /// <summary>
+        /// journalMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl journalMod;
+        
+        /// <summary>
+        /// grantMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grantMod;
+        
+        /// <summary>
+        /// honorMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl honorMod;
+        
+        /// <summary>
+        /// professionalMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl professionalMod;
+        
+        /// <summary>
+        /// mentorMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mentorMod;
+        
+        /// <summary>
+        /// dataMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dataMod;
+        
+        /// <summary>
+        /// otherMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl otherMod;
         
         /// <summary>
         /// Submit control.
