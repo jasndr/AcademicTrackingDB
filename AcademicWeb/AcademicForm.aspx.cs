@@ -204,7 +204,11 @@ namespace AcademicWeb
 
             String staff = getStaff();
 
-            SqlCommand cmd = new SqlCommand(("USE [BiostatProject_DA]; " +
+            switch (academicTypeVal)
+            {
+                case 1:
+
+                    SqlCommand cmd = new SqlCommand(("USE [BiostatProject_DA]; " +
                                              //"GO "+
                                              "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
                                              "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
@@ -225,17 +229,109 @@ namespace AcademicWeb
                                              "SET @Youping = POWER(cast(2 as bigint), 33) " +
                                             //INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated)
                                             "INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
-                                            "("+academicTypeVal+", '" + org.Text + "', '" + title.Text + "', '" + startdate.Text + "', '" + enddate.Text + "', " + noa.Text + ", '" + cn.Text + "', '" + comment.Text + "', " + staff + ", '" +currEmpl+ "', getDATE());"), con);
+                                            "(" + academicTypeVal + ", '" + org.Text + "', '" + title.Text + "', '" + startdate.Text + "', '" + enddate.Text + "', " + noa.Text + ", '" + cn.Text + "', '" + comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
 
-            //"(1, 'Organization', 'EventTitle',  '11/02/2016 15:00', '11/03/2016 17:00', 32, '2342304', 'Comments', (@Jim | @Jun), 'jdelosr', GETDATE());
+                    //"(1, 'Organization', 'EventTitle',  '11/02/2016 15:00', '11/03/2016 17:00', 32, '2342304', 'Comments', (@Jim | @Jun), 'jdelosr', GETDATE());
 
 
 
-            cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
 
-            con.Close();
+                    con.Close();
+
+
+                    break;
+
+                case 2:
+
+                    SqlCommand cmd2 = new SqlCommand(("USE [BiostatProject_DA]; " +
+                                             //"GO "+
+                                             "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
+                                             "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
+                                             "SET @Rui = POWER(2, 4) " +
+                                             "SET @Jun = POWER(2, 8) " +
+                                             "SET @Jim = POWER(2, 9) " +
+                                             "SET @John = POWER(2, 10) " +
+                                             "SET @Jewels = POWER(2, 11) " +
+                                             "SET @Krupa = POWER(2, 12) " +
+                                             "SET @Eunjung = POWER(2, 13) " +
+                                             "SET @Rosa = POWER(2, 15) " +
+                                             "SET @Ved = POWER(2, 16) " +
+                                             "SET @Yang = POWER(2, 19) " +
+                                             "SET @Phoebe = POWER(2, 22) " +
+                                             "SET @Jason = POWER(2, 30) " +
+                                             "SET @Soyung = POWER(cast(2 as bigint), 31) " +
+                                             "SET @Chathura = POWER(cast(2 as bigint), 32) " +
+                                             "SET @Youping = POWER(cast(2 as bigint), 33) " +
+                                            //INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated)
+                                            "INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
+                                            "( " + academicTypeVal + ", " + startSemesterId + ", '" + teaching_y.Text + "', '" + teaching_ct.Text + "', '" + teaching_cn.Text + "', " + teaching_noc.Text + ", " + teaching_nos.Text + ", '" + teaching_comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
+
+
+                    cmd2.ExecuteNonQuery();
+
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
+
+                    con.Close();
+
+
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                default:
+                    break;
+            }
+
+            //SqlCommand cmd = new SqlCommand(("USE [BiostatProject_DA]; " +
+            //                                 //"GO "+
+            //                                 "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
+            //                                 "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
+            //                                 "SET @Rui = POWER(2, 4) " +
+            //                                 "SET @Jun = POWER(2, 8) " +
+            //                                 "SET @Jim = POWER(2, 9) " +
+            //                                 "SET @John = POWER(2, 10) " +
+            //                                 "SET @Jewels = POWER(2, 11) " +
+            //                                 "SET @Krupa = POWER(2, 12) " +
+            //                                 "SET @Eunjung = POWER(2, 13) " +
+            //                                 "SET @Rosa = POWER(2, 15) " +
+            //                                 "SET @Ved = POWER(2, 16) " +
+            //                                 "SET @Yang = POWER(2, 19) " +
+            //                                 "SET @Phoebe = POWER(2, 22) " +
+            //                                 "SET @Jason = POWER(2, 30) " +
+            //                                 "SET @Soyung = POWER(cast(2 as bigint), 31) " +
+            //                                 "SET @Chathura = POWER(cast(2 as bigint), 32) " +
+            //                                 "SET @Youping = POWER(cast(2 as bigint), 33) " +
+            //                                //INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated)
+            //                                "INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
+            //                                "("+academicTypeVal+", '" + org.Text + "', '" + title.Text + "', '" + startdate.Text + "', '" + enddate.Text + "', " + noa.Text + ", '" + cn.Text + "', '" + comment.Text + "', " + staff + ", '" +currEmpl+ "', getDATE());"), con);
+
+            ////"(1, 'Organization', 'EventTitle',  '11/02/2016 15:00', '11/03/2016 17:00', 32, '2342304', 'Comments', (@Jim | @Jun), 'jdelosr', GETDATE());
+
+
+
+            //cmd.ExecuteNonQuery();
+
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
+
+            //con.Close();
 
             Response.Redirect("Default.aspx");
 

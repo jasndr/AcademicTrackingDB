@@ -89,7 +89,7 @@
             <select id="academicTypeList2" name="academicTypeList2" class="form-control" style="width: 280px" runat="server">
                 <option value="1">Seminar/Workshop/Lecture/Training</option>
                 <option value="2">Teaching</option>
-                <option value="3">Disseration/Thesis Committee</option>
+                <option value="3">Dissertation/Thesis Committee</option>
                 <option value="4">Panel/Committee</option>
                 <option value="5">Journal Review</option>
                 <option value="6">Grant Review</option>
@@ -388,7 +388,7 @@
         <!--=======================================================[Course Title]=======================================================================-->
         <div class="form-group">
             <label for="teaching_ct">Course Title:</label>
-            <asp:TextBox ID="teaching_Ct" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="teaching_ct" runat="server" CssClass="form-control"></asp:TextBox>
             <%--<asp:RequiredFieldValidator ID="rftCt" runat="server"
                 ControlToValidate="teaching_Ct"
                 ErrorMessage="The 'course title' field is required.  Please enter N/A if not applicable/available."
