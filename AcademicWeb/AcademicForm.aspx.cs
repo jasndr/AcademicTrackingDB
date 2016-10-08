@@ -19,9 +19,34 @@ namespace AcademicWeb
         int academicTypeVal = 1;
         int startSemesterId = 1;
 
+        String sqlStart = "USE [BiostatProject_DA]; " +
+                                             //"GO "+
+                                             "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
+                                             "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
+                                             "SET @Rui = POWER(2, 4) " +
+                                             "SET @Jun = POWER(2, 8) " +
+                                             "SET @Jim = POWER(2, 9) " +
+                                             "SET @John = POWER(2, 10) " +
+                                             "SET @Jewels = POWER(2, 11) " +
+                                             "SET @Krupa = POWER(2, 12) " +
+                                             "SET @Eunjung = POWER(2, 13) " +
+                                             "SET @Rosa = POWER(2, 15) " +
+                                             "SET @Ved = POWER(2, 16) " +
+                                             "SET @Yang = POWER(2, 19) " +
+                                             "SET @Phoebe = POWER(2, 22) " +
+                                             "SET @Jason = POWER(2, 30) " +
+                                             "SET @Soyung = POWER(cast(2 as bigint), 31) " +
+                                             "SET @Chathura = POWER(cast(2 as bigint), 32) " +
+                                             "SET @Youping = POWER(cast(2 as bigint), 33) ";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConnectDB();
+
+            if (!Page.IsPostBack)
+            {
+                ConnectDB();
+            }
+            
         }
 
         public void ConnectDB()
@@ -47,15 +72,13 @@ namespace AcademicWeb
         }
 
         //What happens when a value is selected in Biostats Dropdown list
-        protected void biostatList2_SelectedIndexChanged(Object sender, EventArgs e)
+        //protected void biostatList2_SelectedIndexChanged(Object sender, EventArgs e)
+        protected String getBioStat()
         {
 
-            if (!Page.IsPostBack)
-            {
-            }
-            else
-            {
-                String selectedValue = biostatList2.Value;
+
+                //String selectedValue = biostatList2.SelectedValue;
+                String selectedValue = Request["biostatList2"];
 
                 switch (selectedValue)
                 {
@@ -105,28 +128,26 @@ namespace AcademicWeb
                         currEmpl = "dengy";
                         break;
                     default:
-                        currEmpl = "Rui";
+                        currEmpl = "fangr";
                         break;
                 }
 
+            return currEmpl;
+
                             
-            }
+            
         }
 
      
 
-        protected void academicTypeList2_SelectedIndexChanged(object sender, EventArgs e)
+        //protected void academicTypeList2_SelectedIndexChanged(object sender, EventArgs e)
+        protected int getAcademicType()
         {
 
-            if (!Page.IsPostBack)
-            {
-            }
-            else
-            {
 
-
-                int selectedValue = Int32.Parse(academicTypeList2.Value);
-      
+                //int selectedValue = Int32.Parse(academicTypeList2.SelectedValue);
+                int selectedValue = Int32.Parse(Request["academicTypeList2"]);
+    
 
                 switch (selectedValue)
                 {
@@ -168,8 +189,8 @@ namespace AcademicWeb
                         break;
                 }
 
-            
-            }
+            return academicTypeVal;
+           
 
         }
 
@@ -203,30 +224,15 @@ namespace AcademicWeb
             //con.Open();
 
             String staff = getStaff();
+            currEmpl = getBioStat();
+            academicTypeVal = getAcademicType();
+          
 
             switch (academicTypeVal)
             {
                 case 1:
 
-                    SqlCommand cmd = new SqlCommand(("USE [BiostatProject_DA]; " +
-                                             //"GO "+
-                                             "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
-                                             "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
-                                             "SET @Rui = POWER(2, 4) " +
-                                             "SET @Jun = POWER(2, 8) " +
-                                             "SET @Jim = POWER(2, 9) " +
-                                             "SET @John = POWER(2, 10) " +
-                                             "SET @Jewels = POWER(2, 11) " +
-                                             "SET @Krupa = POWER(2, 12) " +
-                                             "SET @Eunjung = POWER(2, 13) " +
-                                             "SET @Rosa = POWER(2, 15) " +
-                                             "SET @Ved = POWER(2, 16) " +
-                                             "SET @Yang = POWER(2, 19) " +
-                                             "SET @Phoebe = POWER(2, 22) " +
-                                             "SET @Jason = POWER(2, 30) " +
-                                             "SET @Soyung = POWER(cast(2 as bigint), 31) " +
-                                             "SET @Chathura = POWER(cast(2 as bigint), 32) " +
-                                             "SET @Youping = POWER(cast(2 as bigint), 33) " +
+                    SqlCommand cmd = new SqlCommand((sqlStart +
                                             //INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated)
                                             "INSERT INTO AcademicMasterActivity(AcademicTypeId, Organization, EventTitle, StartDate, EndDate, NumOfAttendees, CourseNum, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
                                             "(" + academicTypeVal + ", '" + org.Text + "', '" + title.Text + "', '" + startdate.Text + "', '" + enddate.Text + "', " + noa.Text + ", '" + cn.Text + "', '" + comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
@@ -246,31 +252,13 @@ namespace AcademicWeb
 
                 case 2:
 
-                    SqlCommand cmd2 = new SqlCommand(("USE [BiostatProject_DA]; " +
-                                             //"GO "+
-                                             "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
-                                             "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
-                                             "SET @Rui = POWER(2, 4) " +
-                                             "SET @Jun = POWER(2, 8) " +
-                                             "SET @Jim = POWER(2, 9) " +
-                                             "SET @John = POWER(2, 10) " +
-                                             "SET @Jewels = POWER(2, 11) " +
-                                             "SET @Krupa = POWER(2, 12) " +
-                                             "SET @Eunjung = POWER(2, 13) " +
-                                             "SET @Rosa = POWER(2, 15) " +
-                                             "SET @Ved = POWER(2, 16) " +
-                                             "SET @Yang = POWER(2, 19) " +
-                                             "SET @Phoebe = POWER(2, 22) " +
-                                             "SET @Jason = POWER(2, 30) " +
-                                             "SET @Soyung = POWER(cast(2 as bigint), 31) " +
-                                             "SET @Chathura = POWER(cast(2 as bigint), 32) " +
-                                             "SET @Youping = POWER(cast(2 as bigint), 33) " +
+                    cmd = new SqlCommand((sqlStart +
                                             //INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated)
                                             "INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
-                                            "( " + academicTypeVal + ", " + startSemesterId + ", '" + teaching_y.Text + "', '" + teaching_ct.Text + "', '" + teaching_cn.Text + "', " + teaching_noc.Text + ", " + teaching_nos.Text + ", '" + teaching_comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
+                                            "(" + academicTypeVal + ", " + startSemesterId + ", '" + teaching_y.Text + "', '" + teaching_ct.Text + "', '" + teaching_cn.Text + "', " + teaching_noc.Text + ", " + teaching_nos.Text + ", '" + teaching_comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
 
 
-                    cmd2.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
 
@@ -297,6 +285,38 @@ namespace AcademicWeb
                 case 11:
                     break;
                 default:
+
+                     cmd = new SqlCommand(("USE [BiostatProject_DA]; " +
+                                             //"GO "+
+                                             "DECLARE @Rui BIGINT, @Jun BIGINT, @Jim BIGINT, @John BIGINT, @Jewels BIGINT, @Krupa BIGINT, @Eunjung BIGINT, @Rosa BIGINT, " +
+                                             "@Ved BIGINT, @Yang BIGINT, @Phoebe BIGINT, @Jason BIGINT, @Soyung BIGINT, @Chathura BIGINT, @Youping BIGINT " +
+                                             "SET @Rui = POWER(2, 4) " +
+                                             "SET @Jun = POWER(2, 8) " +
+                                             "SET @Jim = POWER(2, 9) " +
+                                             "SET @John = POWER(2, 10) " +
+                                             "SET @Jewels = POWER(2, 11) " +
+                                             "SET @Krupa = POWER(2, 12) " +
+                                             "SET @Eunjung = POWER(2, 13) " +
+                                             "SET @Rosa = POWER(2, 15) " +
+                                             "SET @Ved = POWER(2, 16) " +
+                                             "SET @Yang = POWER(2, 19) " +
+                                             "SET @Phoebe = POWER(2, 22) " +
+                                             "SET @Jason = POWER(2, 30) " +
+                                             "SET @Soyung = POWER(cast(2 as bigint), 31) " +
+                                             "SET @Chathura = POWER(cast(2 as bigint), 32) " +
+                                             "SET @Youping = POWER(cast(2 as bigint), 33) " +
+                                            //INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated)
+                                            "INSERT INTO AcademicMasterActivity(AcademicTypeId, StartingSemester, StartDateTime, TitleOfEvent, CourseNumber, NumberOfCredits, NumberOfAttendees, Comments, BiostatBitwiseSum, Creator, DateCreated) VALUES " +
+                                            "( " + academicTypeVal + ", " + startSemesterId + ", '" + teaching_y.Text + "', '" + teaching_ct.Text + "', '" + teaching_cn.Text + "', " + teaching_noc.Text + ", " + teaching_nos.Text + ", '" + teaching_comment.Text + "', " + staff + ", '" + currEmpl + "', getDATE());"), con);
+
+
+                    cmd.ExecuteNonQuery();
+
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your event has been saved!')", true);
+
+                    con.Close();
+
+
                     break;
             }
 

@@ -26,7 +26,7 @@
         <%--<div class="container col-sm-6">
             <label for="biostatList">BQHS Employee:</label>
 
-            <asp:DropDownList ID="biostatList" runat="server" AutoPostBack="false" CssClass="form-control" style="width:200px" OnSelectedIndexChanged="biostatList_SelectedIndexChanged">
+            <asp:DropDownList ID="biostatList2" runat="server" AutoPostBack="true" CssClass="form-control" style="width:200px" OnSelectedIndexChanged="biostatList2_SelectedIndexChanged">
                 <asp:ListItem Value="fangr" Text="Rui Fang" />
                 <asp:ListItem Value="hjahn" Text="Hyeong Jun Ahn" />
                 <asp:ListItem Value="jamesdav" Text="James Davis" />
@@ -47,8 +47,8 @@
 
         <div class="container col-sm-6 dropdown">
             <label>BQHS Employee <em>(you)</em>:</label>
-            <select id="biostatList2" name="biostatList2" class="form-control" style="width: 200px" runat="server">
-                <option value="fangr">Rui Fang</option>
+            <select id="biostatList2" name="biostatList2" class="form-control" style="width: 200px" runat="server" onselectedindexchanged="biostatList2_SelectedIndexChanged">
+                <option value="fangr" selected="selected">Rui Fang</option>
                 <option value="hjahn">Hyeong Jun Ahn</option>
                 <option value="jamesdav">James Davis</option>
                 <option value="jjchen">John Chen</option>
@@ -68,8 +68,8 @@
 
          <!--===============[Academic Type Dropdown]============================================-->
         <%--<div class="container col-sm-6">
-            <label for="academicTypeList">Academic Type:</label>
-            <asp:DropDownList ID="academicTypeList" runat="server" AutoPostBack="false" CssClass="form-control" style="width:280px" OnSelectedIndexChanged="academicTypeList_SelectedIndexChanged">
+            <label for="academicTypeList2">Academic Type:</label>
+            <asp:DropDownList ID="academicTypeList2" runat="server" AutoPostBack="true" CssClass="form-control" style="width:280px" OnSelectedIndexChanged="academicTypeList2_SelectedIndexChanged" ClientIDMode="Static">
                 <asp:ListItem Value="1" Text="Seminar/Workshop/Lecture/Training" />
                 <asp:ListItem Value="2" Text="Teaching" />
                 <asp:ListItem Value="3" Text="Dissertation/Thesis Committee" />
@@ -86,8 +86,8 @@
 
         <div class="container col-sm-6 dropdown">
             <label>Academic Type:</label>
-            <select id="academicTypeList2" name="academicTypeList2" class="form-control" style="width: 280px" runat="server">
-                <option value="1">Seminar/Workshop/Lecture/Training</option>
+            <select id="academicTypeList2" name="academicTypeList2" class="form-control" style="width: 280px" runat="server" onselectedindexchanged="academicTypeList2_SelectedIndexChanged">
+                <option value="1" selected="selected">Seminar/Workshop/Lecture/Training</option>
                 <option value="2">Teaching</option>
                 <option value="3">Dissertation/Thesis Committee</option>
                 <option value="4">Panel/Committee</option>
