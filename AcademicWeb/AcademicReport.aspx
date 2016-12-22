@@ -11,9 +11,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./Scripts/jquery.datetimepicker.css" />
-  <script src="./Scripts/jquery.datetimepicker.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="./Scripts/jquery.js"></script>
-  <script src="./Scripts/build/jquery.datetimepicker.full.min.js"></script>
   <script src="./Scripts/Javascript.js"></script>
 </head>
 <body>
@@ -29,9 +30,14 @@
             
             <div class="row">
                 <div class="col-md-6 form-group">
-                   <label for="BiostatList">Biostats: </label> <asp:DropDownList ID="BiostatList" runat="server" CssClass="form-control" DataSourceID="BioStatNames" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
-                    <asp:ObjectDataSource ID="BioStatNames" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="AcademicWeb.App_Code.DataSet1TableAdapters.BioStatsTableAdapter"></asp:ObjectDataSource>
-                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="AcademicWeb.App_Code.DataSet1TableAdapters.BioStatsTableAdapter"></asp:ObjectDataSource>
+                   <label for="BiostatList">Biostats: </label> <asp:DropDownList ID="BiostatList" runat="server" CssClass="form-control" DataSourceID="BioStatsSource" DataTextField="Name" DataValueField="Name" ></asp:DropDownList>
+                    
+                   
+                    
+                    <asp:SqlDataSource ID="BioStatsSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="/*WHERE        (EndDate  NULL)*/ SELECT Name FROM BioStats WHERE (EndDate &gt; GETDATE()) ORDER BY Name"></asp:SqlDataSource>
+                    
+                   
+                    
                 </div>
                 <div class="col-md-6 form-group">
                     <br />
@@ -43,8 +49,8 @@
             
             <div class="row">
                 <div class="col-md-6 form-group">
-                    <label for="AcademicTypeList">Type:</label><asp:DropDownList ID="AcademicTypeList" runat="server" CssClass="form-control" DataSourceID="AcademicType" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
-                    <asp:ObjectDataSource ID="AcademicType" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="AcademicWeb.App_Code.DataSet1TableAdapters.AcademicFieldTableAdapter"></asp:ObjectDataSource>
+                    <label for="AcademicTypeList">Type:</label><asp:DropDownList ID="AcademicTypeList" runat="server" CssClass="form-control" DataSourceID="AcademicTypeSource" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
+                    <asp:SqlDataSource ID="AcademicTypeSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="SELECT Name FROM AcademicField WHERE (Category = 'AcademicType')"></asp:SqlDataSource>
                 </div>
             </div>
             
@@ -52,26 +58,17 @@
 
             <div class="row">
                 <div class="col-md-3 form-group">
-                    <%--<label for="StartDate">From:</label> <asp:TextBox ID="StartDate" runat="server" CssClass="form-control"></asp:TextBox>--%>
 
-                    <div class="form-group">
+                <div class="form-group">
                 <div class="input-group date" id="datetimepicker1">
-                    <label for="startdate">From:</label>
-                    <asp:TextBox ID="startdate" runat="server" CssClass="form-control"></asp:TextBox>
-                    <%--<asp:RequiredFieldValidator ID="rfSd" runat="server"
-                        ControlToValidate="startdate"
-                        ErrorMessage="The 'start date/time' field is required.  Please enter the current date/time if not available."
-                        ForeColor="Red">
-                    </asp:RequiredFieldValidator>--%>
+                    <label for="StartDate">From:</label> <asp:TextBox ID="StartDate" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
             </div>
             <script type="text/javascript">
                 jQuery.noConflict();
                 $(document).ready(function () {
-                    $('#startdate').datetimepicker({
-                        //formatTime: 'g:i A',
-                        formatDate: 'm/d/Y'
+                    $('#StartDate').datepicker({
                     });
                 });
             </script>
@@ -81,34 +78,20 @@
                 <div class="col-md-3 form-group">
                     <label for="EndDate">To:</label> <asp:TextBox ID="EndDate" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
+                <script type="text/javascript">
+                jQuery.noConflict();
+                $(document).ready(function () {
+                    $('#EndDate').datepicker({
+                    });
+                });
+            </script>
+
             </div>
 
             <div class="container-fluid">
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-                    <LocalReport ReportPath="Report1.rdlc">
-                        <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource4" Name="DataSet2" />
-                        </DataSources>
-                    </LocalReport>
-                </rsweb:ReportViewer>
-                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="Delete" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="AcademicWeb.App_Code.DataSet1TableAdapters.SeminarTableAdapter" UpdateMethod="Update">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Original_Id" Type="Int32" />
-                    </DeleteParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="Title" Type="String" />
-                        <asp:Parameter Name="Organization" Type="String" />
-                        <asp:Parameter Name="StartDate" Type="DateTime" />
-                        <asp:Parameter Name="EndDate" Type="DateTime" />
-                        <asp:Parameter Name="NumOfAttendees" Type="Int32" />
-                        <asp:Parameter Name="CourseNum" Type="String" />
-                        <asp:Parameter Name="Comments" Type="String" />
-                        <asp:Parameter Name="Original_Id" Type="Int32" />
-                    </UpdateParameters>
-                </asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.DataSet1TableAdapters.SeminarTableAdapter"></asp:ObjectDataSource>
+               
+
+                
             </div>
             
             
