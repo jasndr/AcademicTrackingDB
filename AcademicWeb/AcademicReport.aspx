@@ -21,7 +21,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <%--https://www.youtube.com/watch?v=8oJdFF4-IHk--%>
+        <%--https://www.youtube.com/watch?v=WGKzFKgeoo8--%>
         <div class="text-center"><h1>Academic Tracking Report</h1></div>
 
         <div class="container form-group" style="border: 1px solid #CCC">
@@ -90,7 +90,19 @@
 
             <div class="container-fluid">
                
-
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"></asp:ScriptManagerProxy>
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+                    <LocalReport ReportPath="SeminarReport.rdlc">
+                        <DataSources>
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="SeminarsDataset" />
+                        </DataSources>
+                    </LocalReport>
+                </rsweb:ReportViewer>
+                
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.BioStatProject_DADataSetTableAdapters.GetSeminarReport2TableAdapter"></asp:ObjectDataSource>
+                
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="CreateDataReader" TypeName="AcademicWeb.App_Code.DataSet1+SeminarDataTable"></asp:ObjectDataSource>
                 
             </div>
             
