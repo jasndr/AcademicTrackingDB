@@ -14,6 +14,11 @@ namespace AcademicWeb
 
         }
 
+        protected void GetReport_Click(object sender, EventArgs e)
+        {
+            ReportViewer1.LocalReport.Refresh();
+        }
+
         //private void GetReport(object sender, EventArgs e)
         //{
         //    using(SqlDataSource db = new SqlDataSource())
@@ -21,6 +26,12 @@ namespace AcademicWeb
 
         //    }
         //}
+
+
+
+
+
+
 
     }
 }

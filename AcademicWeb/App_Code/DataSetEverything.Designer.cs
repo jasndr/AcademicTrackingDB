@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace AcademicWeb {
+namespace AcademicWeb.App_Code {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace AcademicWeb {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BioStatProject_DADataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetEverything")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BioStatProject_DADataSet : global::System.Data.DataSet {
+    public partial class DataSetEverything : global::System.Data.DataSet {
         
-        private GetSeminarReport2DataTable tableGetSeminarReport2;
+        private GetEverythingDataTable tableGetEverything;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BioStatProject_DADataSet() {
+        public DataSetEverything() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace AcademicWeb {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected BioStatProject_DADataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetEverything(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace AcademicWeb {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GetSeminarReport2"] != null)) {
-                    base.Tables.Add(new GetSeminarReport2DataTable(ds.Tables["GetSeminarReport2"]));
+                if ((ds.Tables["GetEverything"] != null)) {
+                    base.Tables.Add(new GetEverythingDataTable(ds.Tables["GetEverything"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace AcademicWeb {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GetSeminarReport2DataTable GetSeminarReport2 {
+        public GetEverythingDataTable GetEverything {
             get {
-                return this.tableGetSeminarReport2;
+                return this.tableGetEverything;
             }
         }
         
@@ -127,7 +127,7 @@ namespace AcademicWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BioStatProject_DADataSet cln = ((BioStatProject_DADataSet)(base.Clone()));
+            DataSetEverything cln = ((DataSetEverything)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace AcademicWeb {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GetSeminarReport2"] != null)) {
-                    base.Tables.Add(new GetSeminarReport2DataTable(ds.Tables["GetSeminarReport2"]));
+                if ((ds.Tables["GetEverything"] != null)) {
+                    base.Tables.Add(new GetEverythingDataTable(ds.Tables["GetEverything"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace AcademicWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGetSeminarReport2 = ((GetSeminarReport2DataTable)(base.Tables["GetSeminarReport2"]));
+            this.tableGetEverything = ((GetEverythingDataTable)(base.Tables["GetEverything"]));
             if ((initTable == true)) {
-                if ((this.tableGetSeminarReport2 != null)) {
-                    this.tableGetSeminarReport2.InitVars();
+                if ((this.tableGetEverything != null)) {
+                    this.tableGetEverything.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace AcademicWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BioStatProject_DADataSet";
+            this.DataSetName = "DataSetEverything";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BioStatProject_DADataSet.xsd";
+            this.Namespace = "http://tempuri.org/DataSetEverything.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGetSeminarReport2 = new GetSeminarReport2DataTable();
-            base.Tables.Add(this.tableGetSeminarReport2);
+            this.tableGetEverything = new GetEverythingDataTable();
+            base.Tables.Add(this.tableGetEverything);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeGetSeminarReport2() {
+        private bool ShouldSerializeGetEverything() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace AcademicWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BioStatProject_DADataSet ds = new BioStatProject_DADataSet();
+            DataSetEverything ds = new DataSetEverything();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,16 +270,18 @@ namespace AcademicWeb {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void GetSeminarReport2RowChangeEventHandler(object sender, GetSeminarReport2RowChangeEvent e);
+        public delegate void GetEverythingRowChangeEventHandler(object sender, GetEverythingRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GetSeminarReport2DataTable : global::System.Data.TypedTableBase<GetSeminarReport2Row> {
+        public partial class GetEverythingDataTable : global::System.Data.TypedTableBase<GetEverythingRow> {
             
             private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnAcademic_Type;
             
             private global::System.Data.DataColumn columnBiostat_Name;
             
@@ -287,20 +289,14 @@ namespace AcademicWeb {
             
             private global::System.Data.DataColumn columnOrganization;
             
-            private global::System.Data.DataColumn columnStartDate;
-            
-            private global::System.Data.DataColumn columnEndDate;
-            
-            private global::System.Data.DataColumn columnNumOfAttendees;
-            
-            private global::System.Data.DataColumn columnCourseNum;
+            private global::System.Data.DataColumn columnDate;
             
             private global::System.Data.DataColumn columnComments;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2DataTable() {
-                this.TableName = "GetSeminarReport2";
+            public GetEverythingDataTable() {
+                this.TableName = "GetEverything";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +304,7 @@ namespace AcademicWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GetSeminarReport2DataTable(global::System.Data.DataTable table) {
+            internal GetEverythingDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,7 +321,7 @@ namespace AcademicWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected GetSeminarReport2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GetEverythingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -335,6 +331,14 @@ namespace AcademicWeb {
             public global::System.Data.DataColumn IdColumn {
                 get {
                     return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Academic_TypeColumn {
+                get {
+                    return this.columnAcademic_Type;
                 }
             }
             
@@ -364,33 +368,9 @@ namespace AcademicWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StartDateColumn {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    return this.columnStartDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EndDateColumn {
-                get {
-                    return this.columnEndDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NumOfAttendeesColumn {
-                get {
-                    return this.columnNumOfAttendees;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CourseNumColumn {
-                get {
-                    return this.columnCourseNum;
+                    return this.columnDate;
                 }
             }
             
@@ -413,60 +393,58 @@ namespace AcademicWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2Row this[int index] {
+            public GetEverythingRow this[int index] {
                 get {
-                    return ((GetSeminarReport2Row)(this.Rows[index]));
+                    return ((GetEverythingRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GetSeminarReport2RowChangeEventHandler GetSeminarReport2RowChanging;
+            public event GetEverythingRowChangeEventHandler GetEverythingRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GetSeminarReport2RowChangeEventHandler GetSeminarReport2RowChanged;
+            public event GetEverythingRowChangeEventHandler GetEverythingRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GetSeminarReport2RowChangeEventHandler GetSeminarReport2RowDeleting;
+            public event GetEverythingRowChangeEventHandler GetEverythingRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GetSeminarReport2RowChangeEventHandler GetSeminarReport2RowDeleted;
+            public event GetEverythingRowChangeEventHandler GetEverythingRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddGetSeminarReport2Row(GetSeminarReport2Row row) {
+            public void AddGetEverythingRow(GetEverythingRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2Row AddGetSeminarReport2Row(string Biostat_Name, string Title, string Organization, System.DateTime StartDate, System.DateTime EndDate, int NumOfAttendees, string CourseNum, string Comments) {
-                GetSeminarReport2Row rowGetSeminarReport2Row = ((GetSeminarReport2Row)(this.NewRow()));
+            public GetEverythingRow AddGetEverythingRow(string Academic_Type, string Biostat_Name, string Title, string Organization, System.DateTime Date, string Comments) {
+                GetEverythingRow rowGetEverythingRow = ((GetEverythingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        Academic_Type,
                         Biostat_Name,
                         Title,
                         Organization,
-                        StartDate,
-                        EndDate,
-                        NumOfAttendees,
-                        CourseNum,
+                        Date,
                         Comments};
-                rowGetSeminarReport2Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGetSeminarReport2Row);
-                return rowGetSeminarReport2Row;
+                rowGetEverythingRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetEverythingRow);
+                return rowGetEverythingRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2Row FindById(int Id) {
-                return ((GetSeminarReport2Row)(this.Rows.Find(new object[] {
+            public GetEverythingRow FindById(int Id) {
+                return ((GetEverythingRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GetSeminarReport2DataTable cln = ((GetSeminarReport2DataTable)(base.Clone()));
+                GetEverythingDataTable cln = ((GetEverythingDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -474,20 +452,18 @@ namespace AcademicWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GetSeminarReport2DataTable();
+                return new GetEverythingDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnAcademic_Type = base.Columns["Academic Type"];
                 this.columnBiostat_Name = base.Columns["Biostat_Name"];
                 this.columnTitle = base.Columns["Title"];
                 this.columnOrganization = base.Columns["Organization"];
-                this.columnStartDate = base.Columns["StartDate"];
-                this.columnEndDate = base.Columns["EndDate"];
-                this.columnNumOfAttendees = base.Columns["NumOfAttendees"];
-                this.columnCourseNum = base.Columns["CourseNum"];
+                this.columnDate = base.Columns["Date"];
                 this.columnComments = base.Columns["Comments"];
             }
             
@@ -496,63 +472,62 @@ namespace AcademicWeb {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnAcademic_Type = new global::System.Data.DataColumn("Academic Type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAcademic_Type);
                 this.columnBiostat_Name = new global::System.Data.DataColumn("Biostat_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBiostat_Name);
                 this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitle);
                 this.columnOrganization = new global::System.Data.DataColumn("Organization", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrganization);
-                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStartDate);
-                this.columnEndDate = new global::System.Data.DataColumn("EndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEndDate);
-                this.columnNumOfAttendees = new global::System.Data.DataColumn("NumOfAttendees", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumOfAttendees);
-                this.columnCourseNum = new global::System.Data.DataColumn("CourseNum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourseNum);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
                 this.columnComments = new global::System.Data.DataColumn("Comments", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComments);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
+                this.columnAcademic_Type.AllowDBNull = false;
+                this.columnAcademic_Type.MaxLength = 255;
                 this.columnBiostat_Name.ReadOnly = true;
                 this.columnBiostat_Name.MaxLength = 2147483647;
                 this.columnTitle.AllowDBNull = false;
                 this.columnTitle.MaxLength = 255;
                 this.columnOrganization.AllowDBNull = false;
                 this.columnOrganization.MaxLength = 255;
-                this.columnCourseNum.MaxLength = 255;
                 this.columnComments.AllowDBNull = false;
                 this.columnComments.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2Row NewGetSeminarReport2Row() {
-                return ((GetSeminarReport2Row)(this.NewRow()));
+            public GetEverythingRow NewGetEverythingRow() {
+                return ((GetEverythingRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GetSeminarReport2Row(builder);
+                return new GetEverythingRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GetSeminarReport2Row);
+                return typeof(GetEverythingRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GetSeminarReport2RowChanged != null)) {
-                    this.GetSeminarReport2RowChanged(this, new GetSeminarReport2RowChangeEvent(((GetSeminarReport2Row)(e.Row)), e.Action));
+                if ((this.GetEverythingRowChanged != null)) {
+                    this.GetEverythingRowChanged(this, new GetEverythingRowChangeEvent(((GetEverythingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -560,8 +535,8 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GetSeminarReport2RowChanging != null)) {
-                    this.GetSeminarReport2RowChanging(this, new GetSeminarReport2RowChangeEvent(((GetSeminarReport2Row)(e.Row)), e.Action));
+                if ((this.GetEverythingRowChanging != null)) {
+                    this.GetEverythingRowChanging(this, new GetEverythingRowChangeEvent(((GetEverythingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -569,8 +544,8 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GetSeminarReport2RowDeleted != null)) {
-                    this.GetSeminarReport2RowDeleted(this, new GetSeminarReport2RowChangeEvent(((GetSeminarReport2Row)(e.Row)), e.Action));
+                if ((this.GetEverythingRowDeleted != null)) {
+                    this.GetEverythingRowDeleted(this, new GetEverythingRowChangeEvent(((GetEverythingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -578,14 +553,14 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GetSeminarReport2RowDeleting != null)) {
-                    this.GetSeminarReport2RowDeleting(this, new GetSeminarReport2RowChangeEvent(((GetSeminarReport2Row)(e.Row)), e.Action));
+                if ((this.GetEverythingRowDeleting != null)) {
+                    this.GetEverythingRowDeleting(this, new GetEverythingRowChangeEvent(((GetEverythingRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveGetSeminarReport2Row(GetSeminarReport2Row row) {
+            public void RemoveGetEverythingRow(GetEverythingRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -594,7 +569,7 @@ namespace AcademicWeb {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BioStatProject_DADataSet ds = new BioStatProject_DADataSet();
+                DataSetEverything ds = new DataSetEverything();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -612,7 +587,7 @@ namespace AcademicWeb {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GetSeminarReport2DataTable";
+                attribute2.FixedValue = "GetEverythingDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -656,25 +631,36 @@ namespace AcademicWeb {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GetSeminarReport2Row : global::System.Data.DataRow {
+        public partial class GetEverythingRow : global::System.Data.DataRow {
             
-            private GetSeminarReport2DataTable tableGetSeminarReport2;
+            private GetEverythingDataTable tableGetEverything;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GetSeminarReport2Row(global::System.Data.DataRowBuilder rb) : 
+            internal GetEverythingRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGetSeminarReport2 = ((GetSeminarReport2DataTable)(this.Table));
+                this.tableGetEverything = ((GetEverythingDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableGetSeminarReport2.IdColumn]));
+                    return ((int)(this[this.tableGetEverything.IdColumn]));
                 }
                 set {
-                    this[this.tableGetSeminarReport2.IdColumn] = value;
+                    this[this.tableGetEverything.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Academic_Type {
+                get {
+                    return ((string)(this[this.tableGetEverything.Academic_TypeColumn]));
+                }
+                set {
+                    this[this.tableGetEverything.Academic_TypeColumn] = value;
                 }
             }
             
@@ -683,14 +669,14 @@ namespace AcademicWeb {
             public string Biostat_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableGetSeminarReport2.Biostat_NameColumn]));
+                        return ((string)(this[this.tableGetEverything.Biostat_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Biostat_Name\' in table \'GetSeminarReport2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Biostat_Name\' in table \'GetEverything\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGetSeminarReport2.Biostat_NameColumn] = value;
+                    this[this.tableGetEverything.Biostat_NameColumn] = value;
                 }
             }
             
@@ -698,10 +684,10 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Title {
                 get {
-                    return ((string)(this[this.tableGetSeminarReport2.TitleColumn]));
+                    return ((string)(this[this.tableGetEverything.TitleColumn]));
                 }
                 set {
-                    this[this.tableGetSeminarReport2.TitleColumn] = value;
+                    this[this.tableGetEverything.TitleColumn] = value;
                 }
             }
             
@@ -709,74 +695,26 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Organization {
                 get {
-                    return ((string)(this[this.tableGetSeminarReport2.OrganizationColumn]));
+                    return ((string)(this[this.tableGetEverything.OrganizationColumn]));
                 }
                 set {
-                    this[this.tableGetSeminarReport2.OrganizationColumn] = value;
+                    this[this.tableGetEverything.OrganizationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime StartDate {
+            public System.DateTime Date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableGetSeminarReport2.StartDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableGetEverything.DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StartDate\' in table \'GetSeminarReport2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'GetEverything\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGetSeminarReport2.StartDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime EndDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableGetSeminarReport2.EndDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EndDate\' in table \'GetSeminarReport2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGetSeminarReport2.EndDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int NumOfAttendees {
-                get {
-                    try {
-                        return ((int)(this[this.tableGetSeminarReport2.NumOfAttendeesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NumOfAttendees\' in table \'GetSeminarReport2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGetSeminarReport2.NumOfAttendeesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CourseNum {
-                get {
-                    try {
-                        return ((string)(this[this.tableGetSeminarReport2.CourseNumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CourseNum\' in table \'GetSeminarReport2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGetSeminarReport2.CourseNumColumn] = value;
+                    this[this.tableGetEverything.DateColumn] = value;
                 }
             }
             
@@ -784,71 +722,35 @@ namespace AcademicWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Comments {
                 get {
-                    return ((string)(this[this.tableGetSeminarReport2.CommentsColumn]));
+                    return ((string)(this[this.tableGetEverything.CommentsColumn]));
                 }
                 set {
-                    this[this.tableGetSeminarReport2.CommentsColumn] = value;
+                    this[this.tableGetEverything.CommentsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBiostat_NameNull() {
-                return this.IsNull(this.tableGetSeminarReport2.Biostat_NameColumn);
+                return this.IsNull(this.tableGetEverything.Biostat_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBiostat_NameNull() {
-                this[this.tableGetSeminarReport2.Biostat_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableGetEverything.Biostat_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStartDateNull() {
-                return this.IsNull(this.tableGetSeminarReport2.StartDateColumn);
+            public bool IsDateNull() {
+                return this.IsNull(this.tableGetEverything.DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStartDateNull() {
-                this[this.tableGetSeminarReport2.StartDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEndDateNull() {
-                return this.IsNull(this.tableGetSeminarReport2.EndDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEndDateNull() {
-                this[this.tableGetSeminarReport2.EndDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNumOfAttendeesNull() {
-                return this.IsNull(this.tableGetSeminarReport2.NumOfAttendeesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNumOfAttendeesNull() {
-                this[this.tableGetSeminarReport2.NumOfAttendeesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCourseNumNull() {
-                return this.IsNull(this.tableGetSeminarReport2.CourseNumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCourseNumNull() {
-                this[this.tableGetSeminarReport2.CourseNumColumn] = global::System.Convert.DBNull;
+            public void SetDateNull() {
+                this[this.tableGetEverything.DateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -856,22 +758,22 @@ namespace AcademicWeb {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class GetSeminarReport2RowChangeEvent : global::System.EventArgs {
+        public class GetEverythingRowChangeEvent : global::System.EventArgs {
             
-            private GetSeminarReport2Row eventRow;
+            private GetEverythingRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2RowChangeEvent(GetSeminarReport2Row row, global::System.Data.DataRowAction action) {
+            public GetEverythingRowChangeEvent(GetEverythingRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetSeminarReport2Row Row {
+            public GetEverythingRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -887,7 +789,7 @@ namespace AcademicWeb {
         }
     }
 }
-namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
+namespace AcademicWeb.App_Code.DataSetEverythingTableAdapters {
     
     
     /// <summary>
@@ -899,7 +801,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GetSeminarReport2TableAdapter : global::System.ComponentModel.Component {
+    public partial class GetEverythingTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -913,7 +815,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public GetSeminarReport2TableAdapter() {
+        public GetEverythingTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1010,15 +912,13 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GetSeminarReport2";
+            tableMapping.DataSetTable = "GetEverything";
             tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("Academic Type", "Academic Type");
             tableMapping.ColumnMappings.Add("Biostat_Name", "Biostat_Name");
             tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("Organization", "Organization");
-            tableMapping.ColumnMappings.Add("StartDate", "StartDate");
-            tableMapping.ColumnMappings.Add("EndDate", "EndDate");
-            tableMapping.ColumnMappings.Add("NumOfAttendees", "NumOfAttendees");
-            tableMapping.ColumnMappings.Add("CourseNum", "CourseNum");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Comments", "Comments");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1036,10 +936,11 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.GetSeminarReport2";
+            this._commandCollection[0].CommandText = "dbo.GetEverything";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Biostat", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicType", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1048,7 +949,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BioStatProject_DADataSet.GetSeminarReport2DataTable dataTable, string Biostat, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual int Fill(DataSetEverything.GetEverythingDataTable dataTable, string Biostat, string AcademicType, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Biostat == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1056,17 +957,23 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Biostat));
             }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
-            }
-            else {
+            if ((AcademicType == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(ToDate.Value));
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(AcademicType));
+            }
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1079,7 +986,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BioStatProject_DADataSet.GetSeminarReport2DataTable GetData(string Biostat, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual DataSetEverything.GetEverythingDataTable GetData(string Biostat, string AcademicType, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Biostat == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1087,19 +994,25 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Biostat));
             }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
-            }
-            else {
+            if ((AcademicType == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(ToDate.Value));
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(AcademicType));
+            }
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            BioStatProject_DADataSet.GetSeminarReport2DataTable dataTable = new BioStatProject_DADataSet.GetSeminarReport2DataTable();
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            DataSetEverything.GetEverythingDataTable dataTable = new DataSetEverything.GetEverythingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1173,7 +1086,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(BioStatProject_DADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetEverything dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1183,7 +1096,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(BioStatProject_DADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetEverything dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1193,7 +1106,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(BioStatProject_DADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetEverything dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1227,7 +1140,7 @@ namespace AcademicWeb.BioStatProject_DADataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(BioStatProject_DADataSet dataSet) {
+        public virtual int UpdateAll(DataSetEverything dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

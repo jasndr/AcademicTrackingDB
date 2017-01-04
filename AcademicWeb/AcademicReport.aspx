@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./Scripts/jquery.datetimepicker.css" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="./Scripts/jquery.js"></script>
@@ -34,14 +34,14 @@
                     
                    
                     
-                    <asp:SqlDataSource ID="BioStatsSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="/*WHERE        (EndDate  NULL)*/ SELECT Name FROM BioStats WHERE (EndDate &gt; GETDATE()) ORDER BY Name"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="BioStatsSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="/*WHERE        (EndDate  NULL)*/ SELECT NULL AS Name UNION SELECT Name FROM BioStats WHERE (EndDate &gt; GETDATE()) ORDER BY Name"></asp:SqlDataSource>
                     
                    
                     
                 </div>
                 <div class="col-md-6 form-group">
                     <br />
-                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" />
+                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" OnClick="GetReport_Click" />
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="AcademicTypeList">Type:</label><asp:DropDownList ID="AcademicTypeList" runat="server" CssClass="form-control" DataSourceID="AcademicTypeSource" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
-                    <asp:SqlDataSource ID="AcademicTypeSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="SELECT Name FROM AcademicField WHERE (Category = 'AcademicType')"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="AcademicTypeSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="SELECT NULL AS Name UNION SELECT Name FROM AcademicField WHERE (Category = 'AcademicType')"></asp:SqlDataSource>
                 </div>
             </div>
             
@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                 <div class="input-group date" id="datetimepicker1">
-                    <label for="StartDate">From:</label> <asp:TextBox ID="StartDate" runat="server" CssClass="form-control"></asp:TextBox>
+                    <label for="StartDate">From:</label> <asp:TextBox ID="StartDate" runat="server" CssClass="form-control" Text="01/01/2001"></asp:TextBox>
                 </div>
 
             </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-md-3 form-group">
-                    <label for="EndDate">To:</label> <asp:TextBox ID="EndDate" runat="server" CssClass="form-control"></asp:TextBox>
+                    <label for="EndDate">To:</label> <asp:TextBox ID="EndDate" runat="server" CssClass="form-control" Text="01/01/2099"></asp:TextBox>
                 </div>
                 <script type="text/javascript">
                 jQuery.noConflict();
@@ -88,29 +88,44 @@
 
             </div>
 
+         
             <div class="container-fluid">
-               
+
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"></asp:ScriptManagerProxy>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-                    <LocalReport ReportPath="SeminarReport.rdlc">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%">
+                    <LocalReport ReportPath="Report1.rdlc">
                         <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="SeminarsDataset" />
+                            <rsweb:ReportDataSource DataSourceId="GEdatasource2" Name="DataSet1" />
                         </DataSources>
                     </LocalReport>
                 </rsweb:ReportViewer>
-                
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.BioStatProject_DADataSetTableAdapters.GetSeminarReport2TableAdapter"></asp:ObjectDataSource>
-                
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="CreateDataReader" TypeName="AcademicWeb.App_Code.DataSet1+SeminarDataTable"></asp:ObjectDataSource>
-                
+               
+
+                <asp:ObjectDataSource ID="GEdatasource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                        <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="GEdatasource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                        <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetEverythingTableAdapter"></asp:ObjectDataSource>
+               
+
             </div>
             
-            
 
-           
-
+         
               
+
         </div>
 
 
