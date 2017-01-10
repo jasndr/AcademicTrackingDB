@@ -160,7 +160,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Organization</Value>
+                              <Value>Description</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -368,21 +368,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Organization">
+                    <Textbox Name="Description">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Organization.Value</Value>
+                              <Value>=Fields!Description.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Organization</rd:DefaultName>
+                      <rd:DefaultName>Description</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -483,9 +483,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <RepeatColumnHeaders>true</RepeatColumnHeaders>
-        <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSet1</DataSetName>
+        <Top>0.04042in</Top>
+        <Left>0.01958in</Left>
         <Height>0.5in</Height>
         <Width>7in</Width>
         <Style>
@@ -495,10 +495,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.5in</Height>
+    <Height>0.54042in</Height>
     <Style />
   </Body>
-  <Width>7in</Width>
+  <Width>7.01958in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -540,7 +540,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>All Events</Value>
+                  <Value>Other</Value>
                   <Style>
                     <FontFamily>bookman Old Style</FontFamily>
                     <FontSize>11pt</FontSize>
@@ -555,7 +555,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.14583in</Top>
-          <Left>1.34312in</Left>
+          <Left>1.4173in</Left>
           <Height>0.70833in</Height>
           <Width>4.31375in</Width>
           <Style>
@@ -588,7 +588,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>86e819d8-82ad-4cde-9c7f-3addc5f56130</rd:DataSourceID>
+      <rd:DataSourceID>7b34af7e-6509-40f3-8498-18576cf4de60</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -614,8 +614,8 @@
           <DataField>Title</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Organization">
-          <DataField>Organization</DataField>
+        <Field Name="Description">
+          <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Date">
@@ -630,13 +630,13 @@
       <rd:DataSetInfo>
         <rd:DataSetName>GEdataset</rd:DataSetName>
         <rd:SchemaPath>C:\Users\jdelosr\Source\Repos\Practice\AcademicWeb\AcademicWeb\App_Code\GEdataset.xsd</rd:SchemaPath>
-        <rd:TableName>GetEverything</rd:TableName>
+        <rd:TableName>GetOther</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>GetEverythingTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>GetOtherTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>43af355b-09ec-4cf7-896c-c30d093dd9a1</rd:ReportID>
+  <rd:ReportID>bd382602-ad0e-4072-bf62-d6c64704da4a</rd:ReportID>
 </Report>

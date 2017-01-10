@@ -1,10 +1,7 @@
 ﻿
 
 $(document).ready(function () {
-    $('.mainForm').hide()
-    $('#seminarMod').show();
-
-
+    
     $('#biostatList2').on('change', function () {
         var biostatSelect = $('#biostatList2').val();
 
@@ -76,9 +73,11 @@ $(document).ready(function () {
                 break;
         }
 
-
     });
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    $('.mainForm').hide()
+    $('#seminarMod').show();
     //Reveal and hide forms based on its academic type
     $('#academicTypeList2').on('change', function() {
     
@@ -147,7 +146,78 @@ $(document).ready(function () {
         //Prints message that task has been completed.
         alert("Your event has been saved!");
     });
+    ////////////////////////////////////////////////////////////////////////
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    $('.reportForm').hide()
+    $('#everythingRep').show();
+    //Reveal and hide forms based on its academic type
+    $('#AcademicTypeList').on('change', function () {
+
+        var academicSelect = $('#AcademicTypeList').val();
+
+        //alert("hello!  Your selected index for academic type list 2 is: \n \n" + academicSelect + "\n \n !!!");
+
+        switch (academicSelect) {
+            case "Seminar/Workshop/Lecture/Training":
+                $('.reportForm').fadeOut(500);
+                $('#seminarRep').fadeIn(500);
+                break;
+            case "Teaching":
+                $('.reportForm').fadeOut(500);
+                $('#teachingRep').fadeIn(500);
+                break;
+            case "Dissertation/Thesis Committee":
+                $('.reportForm').fadeOut(500);
+                $('#dissertationRep').fadeIn(500);
+                break;
+            case "Panel/Committee":
+                $('.reportForm').fadeOut(500);
+                $('#panelRep').fadeIn(500);
+                break;
+            case "Journal Review":
+                $('.reportForm').fadeOut(500);
+                $('#journalRep').fadeIn(500);
+                break;
+            case "Grant Review":
+                $('.reportForm').fadeOut(500);
+                $('#grantRep').fadeIn(500);
+                break;
+            case "Honor/Award":
+                $('.reportForm').fadeOut(500);
+                $('#honorRep').fadeIn(500);
+                break;
+            case "Professional Traning":
+                $('.reportForm').fadeOut(500);
+                $('#professionalRep').fadeIn(500);
+                break;
+            case "Mentor for K awards and other grants":
+                $('.reportForm').fadeOut(500);
+                $('#mentorRep').fadeIn(500);
+                break;
+            case "Data Safety Monitoring Committee":
+                $('.reportForm').fadeOut(500);
+                $('#dataRep').fadeIn(500);
+                break;
+            case "Other":
+                $('.reportForm').fadeOut(500);
+                $('#otherRep').fadeIn(500);
+                break;
+            default:
+                $('.reportForm').hide();
+                $('#everythingRep').show();
+                break;
+        }
+
+    });
+
+
+    //Removes all forms that are hidden from validation
+    //$("#GetReport").click(function () {
+    //    $('.reportForm:hidden').remove();
+    //    $('#form1').submit();
+    //});
+    ////////////////////////////////////////////////////////////////////////
 
 
 });

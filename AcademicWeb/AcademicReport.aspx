@@ -92,33 +92,350 @@
             <div class="container-fluid">
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%">
-                    <LocalReport ReportPath="Report1.rdlc">
-                        <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="GEdatasource2" Name="DataSet1" />
-                        </DataSources>
-                    </LocalReport>
-                </rsweb:ReportViewer>
+
+                <div class="container reportForm" id="everythingRep" runat="server">
+
+                    
+                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report1.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="GEdatasource2" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
                
 
-                <asp:ObjectDataSource ID="GEdatasource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
-                        <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
-                        <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
-                        <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="GEdatasource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
-                        <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
-                        <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
-                        <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetEverythingTableAdapter"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="GEdatasource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="GEdatasource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetEverythingTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetEverythingTableAdapter"></asp:ObjectDataSource>
                
+                </div>
+
+                <div class="container reportForm" id="seminarRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer2" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report1-Seminar.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="semDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="semDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetSeminarReport4TableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetSeminarReport4TableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="teachingRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager3" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer3" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report2-Teach.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="TeachDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="TeachDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetTeachingTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetTeachingTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="dissertationRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager4" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer4" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report3-Dissertation.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="disDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="disDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetDissertationTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="disDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetDissertationTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource5" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetDissertationTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetDissertationTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="panelRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager5" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer5" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report4-Panel.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="panelDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="panelDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetPanelTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="panelDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetPanelTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource6" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetPanelTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id ="journalRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager6" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer6" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report5-Journal.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="journalDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="journalDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetJournalTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="journalDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetJournalTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetJournalTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="grantRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager7" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer7" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report6-Grant.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="grantDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="grantDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetGrantTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="grantDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetGrantTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource8" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetGrantTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="honorRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager8" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer8" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report7-Honor.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="honorDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="honorDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetHonorTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="honorDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetHonorTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource9" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetHonorTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="professionalRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager9" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer9" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report8-Professional.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="profDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="profDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetProfessionalTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="profDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetProfessionalTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource10" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetProfessionalTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="mentorRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager10" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer10" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report9-Mentor.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="mentorDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="mentorDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetMentorTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="mentorDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetMentorTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource11" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetMentorTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="dataRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager11" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer11" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report10-Data.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="dataDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="dataDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetDataTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="dataDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetDataTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource12" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetDataTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
+                <div class="container reportForm" id="otherRep" runat="server">
+                    <%--<asp:ScriptManager ID="ScriptManager12" runat="server"></asp:ScriptManager>--%>
+                    <rsweb:ReportViewer ID="ReportViewer12" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
+                        <LocalReport ReportPath="Report11-Other.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="otherDS3" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="otherDS3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetOtherTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="otherDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="GEdatasetTableAdapters.GetOtherTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="BiostatList" Name="Biostat" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="AcademicTypeList" Name="AcademicType" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="StartDate" Name="FromDate" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="EndDate" Name="ToDate" PropertyName="Text" Type="DateTime" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource13" runat="server" SelectMethod="GetData" TypeName="AcademicWeb.GEdatasetTableAdapters.GetOtherTableAdapter"></asp:ObjectDataSource>
+                </div>
+
+
 
             </div>
             
