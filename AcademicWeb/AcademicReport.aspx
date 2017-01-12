@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AcademicReport.aspx.cs" Inherits="AcademicWeb.AcademicReport" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AcademicReport.aspx.cs" Inherits="AcademicWeb.AcademicReport" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
@@ -34,14 +35,14 @@
                     
                    
                     
-                    <asp:SqlDataSource ID="BioStatsSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="/*WHERE        (EndDate  NULL)*/ SELECT NULL AS Name UNION SELECT Name FROM BioStats WHERE (EndDate &gt; GETDATE()) ORDER BY Name"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="BioStatsSource" runat="server" ConnectionString="<%$ ConnectionStrings:VedHPSqlServer %>" SelectCommand="/*WHERE        (EndDate  NULL)*/ SELECT NULL AS Name UNION SELECT Name FROM BioStats WHERE (EndDate &gt; GETDATE()) AND (Name &lt;&gt; 'Sample User') ORDER BY Name"></asp:SqlDataSource>
                     
                    
                     
                 </div>
                 <div class="col-md-6 form-group">
                     <br />
-                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" OnClick="GetReport_Click" />
+                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" OnClientClick="getReportBtn" OnClick="GetReport_Click" />
                 </div>
             </div>
 
@@ -50,7 +51,7 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="AcademicTypeList">Type:</label><asp:DropDownList ID="AcademicTypeList" runat="server" CssClass="form-control" DataSourceID="AcademicTypeSource" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
-                    <asp:SqlDataSource ID="AcademicTypeSource" runat="server" ConnectionString="<%$ ConnectionStrings:BioStatProject_DAConnectionString %>" SelectCommand="SELECT NULL AS Name UNION SELECT Name FROM AcademicField WHERE (Category = 'AcademicType')"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="AcademicTypeSource" runat="server" ConnectionString="<%$ ConnectionStrings:VedHPSqlServer %>" SelectCommand="SELECT NULL AS Name UNION SELECT Name FROM AcademicField WHERE (Category = 'AcademicType')"></asp:SqlDataSource>
                 </div>
             </div>
             
@@ -95,7 +96,6 @@
 
                 <div class="container reportForm" id="everythingRep" runat="server">
 
-                    
                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="600px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
                         <LocalReport ReportPath="Report1.rdlc">
                             <DataSources>

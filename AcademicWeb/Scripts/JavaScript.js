@@ -76,7 +76,7 @@ $(document).ready(function () {
     });
 
     /////////////////////////////////////////////////////////////////////////////////////////////
-    $('.mainForm').hide()
+    $('.mainForm').hide();
     $('#seminarMod').show();
     //Reveal and hide forms based on its academic type
     $('#academicTypeList2').on('change', function() {
@@ -149,7 +149,7 @@ $(document).ready(function () {
     ////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////////////////////////////////
-    $('.reportForm').hide()
+    $('.reportForm').hide();
     $('#everythingRep').show();
     //Reveal and hide forms based on its academic type
     $('#AcademicTypeList').on('change', function () {
@@ -218,6 +218,8 @@ $(document).ready(function () {
     //    $('#form1').submit();
     //});
     ////////////////////////////////////////////////////////////////////////
+
+   // var clientViewer = $find("ReportViewer1");
 
 
 });
