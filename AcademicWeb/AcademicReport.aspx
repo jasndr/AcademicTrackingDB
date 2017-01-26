@@ -42,7 +42,8 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <br />
-                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" OnClientClick="getReportBtn" OnClick="GetReport_Click" />
+                    <asp:Button ID="GetReport" runat="server" Text="Get Report" CssClass="btn btn-primary" OnClick="GetReport_Click"  />
+                    <%--<button id="GetReport2" class="btn btn-success">Get Report2</button>--%>
                 </div>
             </div>
 
