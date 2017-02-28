@@ -689,7 +689,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="From: " &amp; Parameters!StartDateParam.Value &amp; "     To: " &amp; Parameters!EndDateParam.Value</Value>
+                  <Value>="From: " &amp; Parameters!StartDateParam.Value &amp; "     To: " &amp; Parameters!EndDateParam.Value &amp; "        " &amp; Count(Fields!Id.Value, "DataSet1") &amp; " records"</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -698,40 +698,10 @@
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
           <Top>0.65277in</Top>
-          <Left>4in</Left>
+          <Left>3.23958in</Left>
           <Height>0.25in</Height>
-          <Width>2.24084in</Width>
+          <Width>3.76042in</Width>
           <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Count(Fields!Id.Value, "DataSet1") &amp; " records"</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.33333in</Top>
-          <Left>7.47792in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
